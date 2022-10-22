@@ -8,10 +8,10 @@ ctx.arc(500,500,30,0,Math.PI * 2);
 ctx.strokeStyle = 'blue';
 ctx.stroke();
 
-let x = 500;
-let y = 300;
-let dx = 4;
-let dy = 4;
+let x = Math.random() * innerWidth;
+let y = Math.random() * innerHeight;
+let dx = (Math.random() * - 0.5) * 15;
+let dy = (Math.random() * - 0.5) * 15;
 var radius = 30;
 function animate() {
         ctx.clearRect(0,0,innerWidth,innerHeight);
@@ -23,7 +23,7 @@ function animate() {
 
         if (x + radius > innerWidth || x - radius < 0) 
             dx = -dx; 
-        if (y + radius > innerHeight || x - radius < 0)
+        if (y + radius > innerHeight || y - radius < 0)
             dy = -dy;
         x += dx;
         y += dy;
